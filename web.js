@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
@@ -7,7 +8,7 @@ app.get('/', function(request, response) {
 
   buf = new Buffer(65000);
 
-  buf = fs.readFileSync("index.html");
+  buf = fs.readFileSync('index.html');
   console.log("read from file::" + buf.toString());
 
 
